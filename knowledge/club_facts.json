@@ -1,0 +1,72 @@
+[
+  {
+    "id": "about",
+    "topic": "About CorSIT",
+    "content": "CorSIT is the robotics club of Siddaganga Institute of Technology (SIT), Tumkur. Founded in 2006, it's the official hub for all robotics activity on campus. Since it started, the club has run national-level workshops and competed at big events across the country. The whole point is hands-on learning -- building real things, not just theory."
+  },
+  {
+    "id": "founders",
+    "topic": "Founders",
+    "content": "CorSIT was founded by Kiran B K (now Product Owner at Bosch Global Software), Shivaswaroop P (now Procurement Specialist at ZF Group), and Divyanshu Sahay (now Firmware Engineer at Intel Corporation)."
+  },
+  {
+    "id": "mentors",
+    "topic": "Faculty mentors",
+    "content": "The club's current mentors are Dr. V Siddeswara Prasad (Robotics Lab Co-ordinator) and Sridhara H S (Robotics Lab Mentor)."
+  },
+  {
+    "id": "achievements",
+    "topic": "Achievements and competitions",
+    "content": "Some wins CorSIT is proud of: IoT Track Prize at NMIT Hacks 2024; 1st Rank at the Internal Smart India Hackathon 2023; 1st Rank (Technical Innovation) at Kurukshetra '13, IIT Delhi/IIT Roorkee; 1st Prize at Space Junk, BMSCE; 2nd Rank at the IoT Challenge, IIT Bombay 2019; 3rd Rank in QUARK (Line Follower Robot) at BITS Goa."
+  },
+  {
+    "id": "roboexpo",
+    "topic": "RoboExpo",
+    "content": "RoboExpo is CorSIT's annual flagship event -- basically a big show-and-tell where members display the bots they've built over the year. It's aimed at introducing newcomers to the club and its work: Line Follower Robots, RoboRacer, gesture-controlled bots, Bluetooth-controlled bots, and more. It's also the club's biggest recruitment moment."
+  },
+  {
+    "id": "robocor",
+    "topic": "ROBOCOR",
+    "content": "ROBOCOR is CorSIT's big national-level robotics competition, one of the largest in Karnataka. Past editions have had events like D-code, Spardha, Rugged Rage, Robo Soccer, Arduino Clash, Binary Rash (LFR), Project Symposium, Paper Presentation, and Init_RC (wireless bot race). ROBOCOR 2026 is happening April 16th, 2026."
+  },
+  {
+    "id": "hackathon",
+    "topic": "Hackathon",
+    "content": "CorSIT has run an annual 12-hour hackathon since 2017 -- students team up to solve real-world problems in areas like IoT, cybersecurity, blockchain, and data science, competing for cash prizes. A recent one, HACKFEST'23, was themed 'Sustainability.'"
+  },
+  {
+    "id": "workshops",
+    "topic": "Workshops",
+    "content": "CorSIT runs free workshops on IoT, Arduino, cloud, and more -- students get hands-on building basic bots like LFR, Bluetooth bots, and obstacle-avoiders. There's also a paid workshop where an industry mentor teaches emerging tech through a mix of lectures and hands-on practice. The 2026 workshop ran on 28th-29th March."
+  },
+  {
+    "id": "team_leadership",
+    "topic": "Current core team",
+    "content": "Current core team leads: Chaithra H R (Vice-Chairman), Aishwarya Acharya PK (Tech Lead, Web Dev Lead), Aditya Agarwal (App Dev Lead, Expedition Lead), Varsha T K (Photoshop Lead)."
+  },
+  {
+    "id": "team_size",
+    "topic": "Club size and structure",
+    "content": "CorSIT has roughly 60 active members across all four years, organized under a core leadership team with role-based leads (Tech, Web Dev, App Dev, Design, etc.), plus general members from every year."
+  },
+  {
+    "id": "alumni",
+    "topic": "Notable alumni",
+    "content": "CorSIT alumni now work at places like Nvidia, Microsoft, Airbus, JP Morgan Chase, Walmart, Cisco, Oracle, Texas Instruments, Juniper Networks, Morgan Stanley, and Siemens Healthineers -- doing everything from software engineering to deep learning to technical management."
+  },
+  {
+    "id": "recent_projects",
+    "topic": "Recent member projects",
+    "content": "Some recent builds: Anti-Sleeping Glasses (drowsiness detector, Dhruva D), Voice Controlled Robotic Claw (Guru Srisha), CareConnect (a Flutter app connecting caregivers with shelter homes, Jahnvi Sharma), Home Automation with ESP8266 and Blynk (Anaya Singh), a Li-Fi data transmission system (Prerana M B), a Smart Weighing Machine (Aditya Mallapur), SafeX -- a safety wearable for workers using ESP32, MQTT, Node.js, MongoDB, Next.js (Dhruthi RS), a Smart Toilet System (Mithun R), an Auto Parking Bot (Anagha B), CropScout -- a crop-disease-detecting rover (Alyssa L), EduBot -- an AI companion robot with expressive OLED eyes (Lalitha Shree Sathyanarayanan), an Aquarium Monitoring System (Siri Gowri M K), and VICTIM BLE -- a disaster-rescue tracking system (Rishabh Singh)."
+  },
+  {
+    "id": "classic_projects",
+    "topic": "Classic beginner projects",
+    "content": "The staple beginner projects at CorSIT: Line Following Robot (Arduino, sensor-based), Gesture Controlled Bot (Python + OpenCV), and Smart Home Automation (NodeMCU-based IoT)."
+  },
+  {
+    "id": "contact",
+    "topic": "Contact info",
+    "content": "CorSIT is based at Siddaganga Institute of Technology, Tumkur. Email: corsit@sit.ac.in. Phone/WhatsApp: +91 7975215782."
+  }
+]
