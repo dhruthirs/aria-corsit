@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ARIA · CorSIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0d0f;
+    --panel: #12161a;
+    --panel-border: #232a30;
+    --cyan: #4dd8c4;
+    --amber: #f2a93b;
+    --coral: #ff6b5e;
+    --text: #e8e6df;
+    --text-dim: #8b9198;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  #root { width: 100%; max-width: 640px; }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.25.6/babel.min.js"></script>
+
+<script type="text/babel" data-presets="react">
+const { useState, useRef, useEffect } = React;
+
+// Change this once you deploy the backend somewhere real
+const API_BASE = "http://localhost:8000";
+
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const speechSupported = !!SpeechRecognition;
+
+function StatusDot({ online }) {
+  return (
+    <span style={{
+      display: "inline-block", width: 8, height: 8, borderRadius: "50%",
+      background: online ? "var(--cyan)" : "#5a5f66",
+      boxShadow: online ? "0 0 8px var(--cyan)" : "none",
+      marginRight: 8,
+    }} />
+  );
+}
+
+function MicIcon({ listening }) {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+      <path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"
+        stroke={listening ? "#0b0d0f" : "currentColor"} strokeWidth="2" strokeLinecap="round" />
+      <path d="M19 11a7 7 0 0 1-14 0M12 18v3"
+        stroke={listening ? "#0b0d0f" : "currentColor"} strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function SpeakerIcon({ on }) {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M4 9v6h4l5 5V4L8 9H4z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+      {on && <path d="M17.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />}
+    </svg>
+  );
+}
+
+function Header({ online, voiceOut, setVoiceOut }) {
+  return (
+    <div style={{
+      display: "flex", justifyContent: "space-between", alignItems: "center",
+      padding: "16px 20px", borderBottom: "1px solid var(--panel-border)",
+    }}>
+      <div>
+        <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 20, fontWeight: 700, letterSpacing: 1 }}>
+          ARIA
+        </div>
+        <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: "var(--text-dim)", marginTop: 2 }}>
+          <StatusDot online={online} />
+          {online ? "ONLINE · CORSIT" : "CONNECTING..."}
+        </div>
+      </div>
+      <button
+        onClick={() => setVoiceOut(!voiceOut)}
+        title={voiceOut ? "Voice replies on" : "Voice replies off"}
+        style={{
+          display: "flex", alignItems: "center", gap: 6,
+          fontFamily: "'Space Mono', monospace", fontSize: 11,
+          padding: "8px 12px", borderRadius: 20, cursor: "pointer",
+          border: `1px solid ${voiceOut ? "var(--cyan)" : "var(--panel-border)"}`,
+          background: voiceOut ? "rgba(77,216,196,0.12)" : "transparent",
+          color: voiceOut ? "var(--cyan)" : "var(--text-dim)",
+        }}
+      >
+        <SpeakerIcon on={voiceOut} /> {voiceOut ? "VOICE ON" : "VOICE OFF"}
+      </button>
+    </div>
+  );
+}
+
+function Message({ role, content }) {
+  const isUser = role === "user";
+  return (
+    <div style={{ display: "flex", justifyContent: isUser ? "flex-end" : "flex-start", marginBottom: 12 }}>
+      <div style={{
+        maxWidth: "78%", padding: "10px 14px", borderRadius: 12,
+        fontSize: 14.5, lineHeight: 1.5,
+        background: isUser ? "var(--cyan)" : "var(--panel)",
+        color: isUser ? "#0b0d0f" : "var(--text)",
+        border: isUser ? "none" : "1px solid var(--panel-border)",
+      }}>
+        {content}
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [messages, setMessages] = useState([
+    { role: "assistant", content: "Systems nominal. I'm ARIA — type or hit the mic and ask me about CorSIT, our members, or dare me to roast someone." },
+  ]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [listening, setListening] = useState(false);
+  const [voiceOut, setVoiceOut] = useState(true);
+  const [online, setOnline] = useState(false);
+  const scrollRef = useRef(null);
+  const recognitionRef = useRef(null);
+  const lastInputModeRef = useRef("text");
+
+  useEffect(() => {
+    fetch(`${API_BASE}/health`).then(r => r.ok && setOnline(true)).catch(() => setOnline(false));
+  }, []);
+
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+  }, [messages]);
+
+  function speak(text) {
+    if (!voiceOut || !window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.rate = 1.05;
+    utter.pitch = 1.05;
+    window.speechSynthesis.speak(utter);
+  }
+
+  async function sendMessage(text, mode) {
+    if (!text.trim() || loading) return;
+    setMessages(prev => [...prev, { role: "user", content: text }]);
+    setLoading(true);
+    try {
+      const res = await fetch(`${API_BASE}/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text, input_mode: mode }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.detail || "Something went wrong");
+      setMessages(prev => [...prev, { role: "assistant", content: data.response }]);
+      speak(data.response);
+    } catch (err) {
+      const errMsg = `Connection hiccup: ${err.message}. Is the backend running?`;
+      setMessages(prev => [...prev, { role: "assistant", content: errMsg }]);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function handleSend() {
+    const text = input.trim();
+    if (!text) return;
+    setInput("");
+    sendMessage(text, "text");
+  }
+
+  function toggleListening() {
+    if (!speechSupported) return;
+    if (listening) {
+      recognitionRef.current?.stop();
+      return;
+    }
+    const recognition = new SpeechRecognition();
+    recognition.lang = "en-IN";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onstart = () => setListening(true);
+    recognition.onend = () => setListening(false);
+    recognition.onerror = () => setListening(false);
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      sendMessage(transcript, "voice");
+    };
+
+    recognitionRef.current = recognition;
+    recognition.start();
+  }
+
+  return (
+    <div style={{ background: "var(--panel)", border: "1px solid var(--panel-border)", borderRadius: 16, overflow: "hidden" }}>
+      <Header online={online} voiceOut={voiceOut} setVoiceOut={setVoiceOut} />
+
+      <div ref={scrollRef} style={{ height: 420, overflowY: "auto", padding: "16px 20px", background: "var(--bg)" }}>
+        {messages.map((m, i) => <Message key={i} role={m.role} content={m.content} />)}
+        {loading && (
+          <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, color: "var(--text-dim)" }}>
+            ARIA is thinking...
+          </div>
+        )}
+        {listening && (
+          <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "'Space Mono', monospace", fontSize: 12, color: "var(--coral)" }}>
+            <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--coral)", animation: "pulse 1s infinite" }} />
+            Listening...
+          </div>
+        )}
+      </div>
+
+      <div style={{ display: "flex", gap: 8, padding: 16, borderTop: "1px solid var(--panel-border)" }}>
+        <input
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          onKeyDown={e => e.key === "Enter" && handleSend()}
+          placeholder="Ask ARIA something..."
+          style={{
+            flex: 1, background: "var(--bg)", border: "1px solid var(--panel-border)",
+            borderRadius: 8, padding: "10px 12px", color: "var(--text)", fontSize: 14,
+            outline: "none", fontFamily: "'Inter', sans-serif",
+          }}
+        />
+        {speechSupported && (
+          <button
+            onClick={toggleListening}
+            title={listening ? "Stop listening" : "Speak your question"}
+            style={{
+              display: "flex", alignItems: "center", justifyContent: "center",
+              width: 42, height: 42, borderRadius: 8, cursor: "pointer",
+              border: `1px solid ${listening ? "var(--coral)" : "var(--panel-border)"}`,
+              background: listening ? "var(--coral)" : "transparent",
+              color: listening ? "#0b0d0f" : "var(--text)",
+            }}
+          >
+            <MicIcon listening={listening} />
+          </button>
+        )}
+        <button
+          onClick={handleSend}
+          disabled={loading}
+          style={{
+            background: "var(--cyan)", color: "#0b0d0f", border: "none", borderRadius: 8,
+            padding: "10px 18px", fontWeight: 600, cursor: loading ? "default" : "pointer",
+            opacity: loading ? 0.6 : 1,
+          }}
+        >
+          Send
+        </button>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

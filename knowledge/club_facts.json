@@ -2,7 +2,12 @@
   {
     "id": "about",
     "topic": "About CorSIT",
-    "content": "CorSIT is the robotics club of Siddaganga Institute of Technology (SIT), Tumkur. Founded in 2006, it's the official hub for all robotics activity on campus. Since it started, the club has run national-level workshops and competed at big events across the country. The whole point is hands-on learning -- building real things, not just theory."
+    "content": "CorSIT (Club of Robotics, SIT) is the official robotics club of Siddaganga Institute of Technology (SIT), Tumkur, founded in 2006. It is SIT's only robotics club and is supported by the e-Yantra cell of IIT Bombay. The club runs national-level workshops and competitions and competes at big events across the country. The whole idea is hands-on learning -- building real things, not just theory."
+  },
+  {
+    "id": "eyantra",
+    "topic": "e-Yantra support",
+    "content": "CorSIT works under the e-Yantra cell of IIT Bombay, which is IIT Bombay's robotics outreach initiative. The club describes itself as SIT's official robotics club under e-Yantra."
   },
   {
     "id": "founders",
@@ -12,52 +17,107 @@
   {
     "id": "mentors",
     "topic": "Faculty mentors",
-    "content": "The club's current mentors are Dr. V Siddeswara Prasad (Robotics Lab Co-ordinator) and Sridhara H S (Robotics Lab Mentor)."
+    "content": "The club's mentors are Dr. V Siddeswara Prasad (Robotics Lab Co-ordinator) and Sridhara H S (Robotics Lab Mentor)."
   },
   {
     "id": "achievements",
-    "topic": "Achievements and competitions",
-    "content": "Some wins CorSIT is proud of: IoT Track Prize at NMIT Hacks 2024; 1st Rank at the Internal Smart India Hackathon 2023; 1st Rank (Technical Innovation) at Kurukshetra '13, IIT Delhi/IIT Roorkee; 1st Prize at Space Junk, BMSCE; 2nd Rank at the IoT Challenge, IIT Bombay 2019; 3rd Rank in QUARK (Line Follower Robot) at BITS Goa."
+    "topic": "Achievements: what CorSIT has won (win, won, wins, awards, prizes)",
+    "content": "CorSIT has won many prizes and awards. Notable wins, awards and rankings: IoT Track Prize at NMIT Hacks 2024; 1st Rank at the Internal Smart India Hackathon 2023; 1st Rank (Technical Innovation) at Kurukshetra '13, IIT Delhi/IIT Roorkee; 1st Prize at Space Junk, BMSCE; 2nd Rank at the IoT Challenge, IIT Bombay 2019; 3rd Rank in QUARK (Line Follower Robot) at BITS Goa."
+  },
+  {
+    "id": "recent_wins",
+    "topic": "Recent wins: what CorSIT won this year (win, won, prizes, awards) 2026",
+    "content": "Recent wins this year: In April 2026, CorSIT members won 1st prize in a Techno Quiz, 2nd prize in LFR (line follower robot), 2nd prize in a Hobby project, and 2nd prize in Hardware debugging. Also in April 2026, member Shravya G S won 2nd prize at the National Quantum Student Summit 2026 at VTU Belagavi."
+  },
+  {
+    "id": "wro",
+    "topic": "World Robot Olympiad",
+    "content": "In July 2025, Team CorSIT took part in the WRO (World Robot Olympiad India) regionals held at Cambridge Institute of Technology."
   },
   {
     "id": "roboexpo",
     "topic": "RoboExpo",
-    "content": "RoboExpo is CorSIT's annual flagship event -- basically a big show-and-tell where members display the bots they've built over the year. It's aimed at introducing newcomers to the club and its work: Line Follower Robots, RoboRacer, gesture-controlled bots, Bluetooth-controlled bots, and more. It's also the club's biggest recruitment moment."
+    "content": "RoboExpo is CorSIT's annual signature fresher's event -- a big show-and-tell where members display the projects they've built over the year. It is aimed at newcomers (especially 1st and 2nd years) and is the club's main recruitment moment. Projects span robotics, IoT, web development, Android development, data science and machine learning, including Line Follower Robots, RoboRacer, gesture-controlled bots and Bluetooth-controlled bots."
+  },
+  {
+    "id": "roboexpo_history",
+    "topic": "RoboExpo past editions",
+    "content": "Past RoboExpo editions were all held at Birla Auditorium: 7 December 2023 at 4 PM (for 1st and 2nd years), 15 November 2024 at 5 PM, and 28 October 2025 at 4 PM. RoboExpo 2025 had 35+ projects on display. Registration is done through the link on CorSIT's Instagram bio and the club website."
+  },
+  {
+    "id": "recruitment",
+    "topic": "How to join CorSIT",
+    "content": "Joining CorSIT is done through recruitments, which happen right after RoboExpo each year. Round 1 is a written test and Round 2 is a personal interview. Past tests were held at the IEM department, 1st floor (where the CorSIT Lab is), usually in the late afternoon. Registration is through the link in the CorSIT Instagram bio or the website corsit.in. Every year the club has also kept extra test days for people who missed the first one, so a missed date is not the end of the road. In 2025, over 270 students took part in recruitments."
+  },
+  {
+    "id": "recruitment_timeline",
+    "topic": "Recruitment timeline by year",
+    "content": "2023: RoboExpo on 7 Dec, recruitment on 12 Dec at the CorSIT Lab, new recruits announced 20 Dec. 2024: RoboExpo on 15 Nov, written test on 19 Nov (extra day on 20 Nov), new members welcomed 10 Dec. 2025: RoboExpo on 28 Oct, tests on 31 Oct and 7 Nov (extended to 8 Nov), new members welcomed 27 Nov."
   },
   {
     "id": "robocor",
     "topic": "ROBOCOR",
-    "content": "ROBOCOR is CorSIT's big national-level robotics competition, one of the largest in Karnataka. Past editions have had events like D-code, Spardha, Rugged Rage, Robo Soccer, Arduino Clash, Binary Rash (LFR), Project Symposium, Paper Presentation, and Init_RC (wireless bot race). ROBOCOR 2026 is happening April 16th, 2026."
+    "content": "ROBOCOR is CorSIT's nationally renowned robotics and tech fest, one of the biggest events of its kind in Karnataka. It mixes robotics, coding, quizzes, project showcases and gaming. The ROBOCOR website is robocor.corsit.in. ROBOCOR 2024 on 9 May 2024 crossed 1000+ participants."
+  },
+  {
+    "id": "robocor_2024",
+    "topic": "ROBOCOR 2024 events",
+    "content": "ROBOCOR'24 events included Droid Race (line follower), Droid Kick (robo soccer), Star Link (Bluetooth bot maze), Arduino Craft, Byte Wars (coding), Quizzy Brainiacs (quiz) and Project Symposium."
+  },
+  {
+    "id": "robocor_2025",
+    "topic": "ROBOCOR 2025",
+    "content": "ROBOCOR'25 was held on 22 May 2025 at the Media Center, SIT, from 8 AM, with cash prizes worth Rs 55,000. Events: Neon Run (off-road bot race), Cyber Track (line follower), Neon Maze (Bluetooth bot maze), Cyber Kick (robo soccer), Binary Duels (coding), Arduino Forge, Nexus Quiz, BGMI Punks (gaming) and Project Conclave."
+  },
+  {
+    "id": "robocor_2026",
+    "topic": "ROBOCOR 2026",
+    "content": "ROBOCOR 2026 was held in April 2026 (the website lists 16 April) with the tagline Create. Compete. Conquer. Events: Runic Maze (Bluetooth bot maze), Hex Track (line follower), Construct Clash (robo soccer), Zaun Race (off-road race), Arduino Alchemy, Binary Runes (coding), Arcane Quiz, Project Nexus and BGMI Rush (gaming). Its recap line was: In Steel We Forge, In Hex We Rise."
   },
   {
     "id": "hackathon",
     "topic": "Hackathon",
-    "content": "CorSIT has run an annual 12-hour hackathon since 2017 -- students team up to solve real-world problems in areas like IoT, cybersecurity, blockchain, and data science, competing for cash prizes. A recent one, HACKFEST'23, was themed 'Sustainability.'"
+    "content": "CorSIT has run an annual 12-hour virtual hackathon since 2017 where students solve real-world problems in areas like IoT, cybersecurity, blockchain and data science for cash prizes. HACKFEST'23 was themed Sustainability. The 2024 edition was themed Tech for All, on 12 May 2024, with prizes worth 36k."
   },
   {
     "id": "workshops",
     "topic": "Workshops",
-    "content": "CorSIT runs free workshops on IoT, Arduino, cloud, and more -- students get hands-on building basic bots like LFR, Bluetooth bots, and obstacle-avoiders. There's also a paid workshop where an industry mentor teaches emerging tech through a mix of lectures and hands-on practice. The 2026 workshop ran on 28th-29th March."
+    "content": "CorSIT runs hands-on robotics workshops where students build and program their own bots, with a competition on the last day. It also runs free workshops on IoT, Arduino and cloud, and a paid workshop where a mentor teaches emerging tech through lectures and studio practice. Past workshops: 13-14 April 2024 at Tel101, ETE department; 11-12 May 2025 at TEL101, ETE department; 28-29 March 2026 at the MBA Seminar Hall, SIT."
+  },
+  {
+    "id": "workshop_2026",
+    "topic": "Workshop 2026 result",
+    "content": "Workshop 2026 (28-29 March 2026) had 37 teams building everything from Bluetooth bots to Line Follower Robots, ending in a final competition."
+  },
+  {
+    "id": "lab",
+    "topic": "The CorSIT Lab",
+    "content": "The CorSIT Lab is on the 1st floor of the IEM department at SIT. The lab was redone and relaunched in May 2026. The club celebrates Ayudha Pooja in the lab every year -- in 2026 it was on 19 October, honouring the tools that build tomorrow's innovations."
   },
   {
     "id": "team_leadership",
-    "topic": "Current core team",
-    "content": "Current core team leads: Chaithra H R (Vice-Chairman), Aishwarya Acharya PK (Tech Lead, Web Dev Lead), Aditya Agarwal (App Dev Lead, Expedition Lead), Varsha T K (Photoshop Lead)."
+    "topic": "Core team",
+    "content": "The club website lists these leads: Chaithra H R (Vice-Chairman), Aishwarya Acharya PK (Tech Lead, Web Dev Lead), Aditya Agarwal (App Dev Lead, Expedition Lead), Varsha T K (Photoshop Lead). CorSIT hands leadership over to a new team every mid-year (June or July) and the latest handover was in June 2026, so for the current leads, ask a member at the booth."
   },
   {
     "id": "team_size",
     "topic": "Club size and structure",
-    "content": "CorSIT has roughly 60 active members across all four years, organized under a core leadership team with role-based leads (Tech, Web Dev, App Dev, Design, etc.), plus general members from every year."
+    "content": "CorSIT has 60+ active members across all four years, organized under a core leadership team with role-based leads (Tech, Web Dev, App Dev, Design and more), plus general members from every year."
   },
   {
     "id": "alumni",
     "topic": "Notable alumni",
-    "content": "CorSIT alumni now work at places like Nvidia, Microsoft, Airbus, JP Morgan Chase, Walmart, Cisco, Oracle, Texas Instruments, Juniper Networks, Morgan Stanley, and Siemens Healthineers -- doing everything from software engineering to deep learning to technical management."
+    "content": "CorSIT alumni now work at places like Nvidia, Microsoft, Airbus, JP Morgan Chase, Walmart, Cisco, Oracle, Texas Instruments, Juniper Networks, Morgan Stanley and Siemens Healthineers -- from software engineering to deep learning to technical management."
   },
   {
     "id": "recent_projects",
     "topic": "Recent member projects",
-    "content": "Some recent builds: Anti-Sleeping Glasses (drowsiness detector, Dhruva D), Voice Controlled Robotic Claw (Guru Srisha), CareConnect (a Flutter app connecting caregivers with shelter homes, Jahnvi Sharma), Home Automation with ESP8266 and Blynk (Anaya Singh), a Li-Fi data transmission system (Prerana M B), a Smart Weighing Machine (Aditya Mallapur), SafeX -- a safety wearable for workers using ESP32, MQTT, Node.js, MongoDB, Next.js (Dhruthi RS), a Smart Toilet System (Mithun R), an Auto Parking Bot (Anagha B), CropScout -- a crop-disease-detecting rover (Alyssa L), EduBot -- an AI companion robot with expressive OLED eyes (Lalitha Shree Sathyanarayanan), an Aquarium Monitoring System (Siri Gowri M K), and VICTIM BLE -- a disaster-rescue tracking system (Rishabh Singh)."
+    "content": "Some recent member builds: Anti-Sleeping Glasses (drowsiness detector, Dhruva D), Voice Controlled Robotic Claw (Guru Srisha), CareConnect (a Flutter app connecting caregivers with shelter homes, Jahnvi Sharma), Home Automation with ESP8266 and Blynk (Anaya Singh), a Li-Fi data transmission system (Prerana M B), a Smart Weighing Machine (Aditya Mallapur), SafeX -- a safety wearable for workers using ESP32, MQTT, Node.js, MongoDB and Next.js (Dhruthi RS), a Smart Toilet System (Mithun R), an Auto Parking Bot (Anagha B), CropScout -- a crop-disease-detecting rover (Alyssa L), EduBot -- an AI companion robot with expressive OLED eyes (Lalitha Shree Sathyanarayanan), an Aquarium Monitoring System (Siri Gowri M K), and VICTIM BLE -- a disaster-rescue tracking system (Rishabh Singh)."
+  },
+  {
+    "id": "club_builds",
+    "topic": "Club builds 2025-26",
+    "content": "Showcased on CorSIT's Instagram: a Gesture Control Bot (September 2025), the Rugged Race off-road bot (December 2025), and a CNC Plotter (May 2026) -- its first test print was the CorSIT logo, printed for free."
   },
   {
     "id": "classic_projects",
@@ -66,7 +126,7 @@
   },
   {
     "id": "contact",
-    "topic": "Contact info",
-    "content": "CorSIT is based at Siddaganga Institute of Technology, Tumkur. Email: corsit@sit.ac.in. Phone/WhatsApp: +91 7975215782."
+    "topic": "Contact and social",
+    "content": "CorSIT is at Siddaganga Institute of Technology, Tumkur. Email: corsit@sit.ac.in. Phone/WhatsApp: +91 7975215782. Instagram: @corsit.sit (Club Of Robotics SIT). Website: corsit.in. ROBOCOR site: robocor.corsit.in."
   }
 ]
